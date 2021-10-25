@@ -1,4 +1,6 @@
 #User Detail Application
 
-Login:- For login use any id in https://jsonplaceholder.typicode.com/users
-Password:- Any Strong Passwordus
+For login the application
+
+Login:- Any id in https://jsonplaceholder.typicode.com/users
+Password:- Any Strong Password
