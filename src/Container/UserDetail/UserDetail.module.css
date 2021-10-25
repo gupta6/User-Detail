@@ -1,0 +1,16 @@
+.UserDetail{
+    min-height: calc(100vh - 50px);
+}
+
+.form{
+    align-items: center;
+    width: 360px;
+    margin: 20px auto;
+    padding: 10px;
+    box-shadow: 2px 2px 3px #eee;
+    border: 1px solid #ccc;
+}
+
+.cancel{
+    margin-left: 10px !important;
+}

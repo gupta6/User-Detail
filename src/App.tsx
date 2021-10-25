@@ -1,24 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+
+import Login from "./Container/Login/Login";
+import Dashboard from "./Container/Dashboard/Dashboard";
+import { useAppSelector } from "./store/hooks";
+import Footer from "./Components/Footer/Footer";
+import UserDetail from "./Container/UserDetail/UserDetail";
 
 function App() {
+  const dispatch = useDispatch();
+  const user = useAppSelector((state) => state.currentUser);
+
+  useEffect(() => {
+    dispatch({ type: "GET_USERS" });
+  }, [dispatch]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        {user ? (
+          <Switch>
+            <Route path="/user-edit" component={UserDetail} />
+            <Route path="/" component={Dashboard} />
+          </Switch>
+        ) : (
+          <>
+            <Route path="/" component={Login} />
+          </>
+        )}
+      </BrowserRouter>
+      <Footer />
     </div>
   );
 }

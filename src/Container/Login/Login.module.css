@@ -1,0 +1,22 @@
+.login{
+    min-height: calc(100vh - 50px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0;
+}
+
+.form{
+    width: 330px;
+    height: auto;
+    align-items: center;
+    border:2px solid #EAEDED;
+    padding: 2% 0;
+}
+
+.form label{
+    display: block;
+}
+
+
